@@ -15,6 +15,9 @@ Need other features? Let me know!
 
 ## Release Notes
 
+### 1.0.2
+Small fixes after first publish.
+
 ### 1.0.0
 Initial Release, allowing to format markdown documents from the touchbar of the MacBook Pro.
 

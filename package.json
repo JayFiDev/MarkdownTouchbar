@@ -2,7 +2,7 @@
     "name": "markdown-touchbar",
     "displayName": "Markdown Touchbar",
     "description": "Macbook Pro Touch Bar extension to simplify markdown generation",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "JayFiDev",
     "engines": {
         "vscode": "^1.25.0"
