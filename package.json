@@ -1,15 +1,21 @@
 {
     "name": "markdown-touchbar",
-    "displayName": "Markdown TouchBar",
-    "description": "Touchbar extension to simplify markdown generation",
+    "displayName": "Markdown Touchbar",
+    "description": "Macbook Pro Touch Bar extension to simplify markdown generation",
     "version": "1.0.0",
     "publisher": "JayFiDev",
     "engines": {
         "vscode": "^1.25.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "Programming Languages"
     ],
+    "icon": "assets/icon.png",
+    "galleryBanner": {
+        "color": "#0A6A6A",
+        "theme": "dark"
+    },
     "activationEvents": [
         "onLanguage:markdown"
     ],
@@ -85,5 +91,9 @@
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JayFiDev/MarkdownTouchbar"
     }
 }

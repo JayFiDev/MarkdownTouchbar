@@ -24,22 +24,116 @@ export function activate(context: vscode.ExtensionContext) {
 
     let disposableTable = vscode.commands.registerCommand('extension.createTable', async () => {
         createMarkdownTable();
-        
+
     });
 
     let disposableDoc = vscode.commands.registerCommand('extension.formatDoc', () => {
         vscode.commands.executeCommand('editor.action.formatDocument');
     });
 
-    let disposableMore = vscode.commands.registerCommand('extension.showMore', () => {
-        
-        vscode.window.showInformationMessage('Show more options');
+    let disposableMore = vscode.commands.registerCommand('extension.showMore', async () => {
+
+
+        let items: vscode.QuickPickItem[] = [];
+        items.push({ label: 'Strikethrough', description: 'Strikethrough selected text' });
+        items.push({ label: 'Link', description: 'Create new link' });
+        items.push({ label: 'Image', description: 'Insert new image' });
+
+        var option = await vscode.window.showQuickPick(items);
+
+        if (isUndefined(option)) {
+            return;
+        } else {
+            switch (option.label) {
+                case "Image":
+                    insertImage();
+                    break;
+
+                case "Link":
+                    insertLink();
+                    break;
+
+                case "Strikethrough":
+                    formatText("~~");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
     });
 
     context.subscriptions.push(disposableBold, disposableItalic, disposableCode, disposableTable, disposableDoc, disposableMore);
 }
 
-export async function createMarkdownTable(){
+export async function insertLink(){
+
+    let link: vscode.InputBoxOptions = {
+        prompt: "Please insert link",
+        placeHolder: "[http://www.foo.bar]"
+    };
+
+    let name: vscode.InputBoxOptions = {
+        prompt: "Please insert name for link",
+        placeHolder: "[foo.bar Homepage]"
+    };
+
+    var linkEntry = await vscode.window.showInputBox(link);
+    if (isUndefined(linkEntry)) {
+        return;
+    }
+
+    var linkName = await vscode.window.showInputBox(name);
+    if (isUndefined(linkName)) {
+        return;
+    }
+
+    var newText = "[" + linkName + "](" + linkEntry + ")";    
+    insertTextIntoDocument(newText);
+
+}
+
+export async function insertImage(){
+
+    //![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+    let link: vscode.InputBoxOptions = {
+        prompt: "Please insert link to image",
+        placeHolder: "[./images/hello_world.png]"
+    };
+
+    let name: vscode.InputBoxOptions = {
+        prompt: "Please insert title for image",
+        placeHolder: "[Hello world]"
+    };
+
+    let alternative: vscode.InputBoxOptions = {
+        prompt: "Please insert alternative text",
+        placeHolder: "[Hello world output in console]"
+    };
+
+    var linkEntry = await vscode.window.showInputBox(link);
+    if (isUndefined(linkEntry)) {
+        return;
+    }
+
+    var imageTitle = await vscode.window.showInputBox(name);
+    if (isUndefined(imageTitle)) {
+        return;
+    }
+
+    var alternativeText = await vscode.window.showInputBox(alternative);
+    if (isUndefined(alternativeText)) {
+        return;
+    }
+
+    var newText = "![" + alternativeText + "](" + linkEntry + " \"" + imageTitle + "\")";    
+    insertTextIntoDocument(newText);
+
+}
+
+export async function createMarkdownTable() {
     let options: vscode.InputBoxOptions = {
         prompt: "Please insert size of table: \"Rows,Columns\" ",
         placeHolder: "[Rows],[Columns]  \"3,3\""
@@ -52,10 +146,10 @@ export async function createMarkdownTable(){
 
 
     var value = await vscode.window.showInputBox(options);
-    if(isUndefined(value)){
+    if (isUndefined(value)) {
         return;
     }
-    
+
     var align = await vscode.window.showQuickPick(items);
 
     if (isUndefined(align)) {
