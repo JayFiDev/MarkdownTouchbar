@@ -2,6 +2,10 @@
 
 This is the README for your extension "markdown-touchbar". After writing up a brief description, we recommend including the following sections.
 
+__TODO__ https://icons8.com/license/ -> link for icons
+
+
+
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.

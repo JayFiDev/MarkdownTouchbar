@@ -2,7 +2,7 @@
     "name": "markdown-touchbar",
     "displayName": "Markdown TouchBar",
     "description": "Touchbar extension to simplify markdown generation",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "JayFiDev",
     "engines": {
         "vscode": "^1.25.0"
@@ -11,17 +11,67 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onLanguage:markdown"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.makeBold",
+                "title": " 𝐁 "
+            },
+            {
+                "command": "extension.makeItalic",
+                "title": " 𝐼 "
+            },
+            {
+                "command": "extension.makeCode",
+                "title": "</>"
+            },
+            {
+                "command": "extension.createTable",
+                "title": "|--|"
+            },
+            {
+                "command": "extension.formatDoc",
+                "title": "☷"
+            },
+            {
+                "command": "extension.showMore",
+                "title": "More" 
             }
-        ]
+
+        ],
+        "menus": {
+            "touchBar": [
+                {
+                    "command": "extension.makeBold",
+                    "group": "editing"
+                },
+                {
+                    "command": "extension.makeItalic",
+                    "group": "editing"
+                },
+                {
+                    "command": "extension.makeCode",
+                    "group": "editing"
+                },
+                {
+                    "command": "extension.createTable",
+                    "group": "editing"
+                },
+                {
+                    "command": "extension.formatDoc",
+                    "group": "editing"
+                },
+                {
+                    "command": "extension.showMore",
+                    "group": "editing"
+                }
+            ]
+        }
     },
+
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
