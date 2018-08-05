@@ -11,11 +11,12 @@ This extensions allows to format your markdown files from the touchbar.
 * Insert tables in different sizes, images and links
 * Format the markdown document
 
-Need other features? Let me know!
+Need other features? Let me know! 
 
 ## Release Notes
 
 ### 1.0.0
 Initial Release, allowing to format markdown documents from the touchbar of the MacBook Pro.
 
-------------------------------------------------------------------------------------
+## License 
+Thanks to [Icons8](https://icons8.com) for the markdown icon in the logo.
