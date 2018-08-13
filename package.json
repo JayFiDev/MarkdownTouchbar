@@ -2,7 +2,7 @@
     "name": "markdown-touchbar",
     "displayName": "Markdown Touchbar",
     "description": "Macbook Pro Touch Bar extension to simplify markdown generation",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "publisher": "JayFiDev",
     "engines": {
         "vscode": "^1.25.0"
@@ -59,26 +59,32 @@
             "touchBar": [
                 {
                     "command": "extension.makeBold",
+                    "when": "editorLangId == markdown",
                     "group": "editing"
                 },
                 {
                     "command": "extension.makeItalic",
+                    "when": "editorLangId == markdown",
                     "group": "editing"
                 },
                 {
                     "command": "extension.makeCode",
+                    "when": "editorLangId == markdown",
                     "group": "editing"
                 },
                 {
                     "command": "extension.createTable",
+                    "when": "editorLangId == markdown",
                     "group": "editing"
                 },
                 {
                     "command": "extension.formatDoc",
+                    "when": "editorLangId == markdown",
                     "group": "editing"
                 },
                 {
                     "command": "extension.showMore",
+                    "when": "editorLangId == markdown",
                     "group": "editing"
                 }
             ]
