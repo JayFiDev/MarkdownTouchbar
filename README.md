@@ -1,6 +1,6 @@
 # Markdown Touchbar
 
-Improve your markdown workflow on the MacBook Pro with this extension.
+Improve your markdown workflow on the MacBook Pro with this extension. It allows you to write your markdown files faster and easier. 
 
 ## Features
 
@@ -11,7 +11,7 @@ This extensions allows to format your markdown files from the touchbar.
 * Insert tables in different sizes, images and links
 * Format the markdown document
 
-Need other features? Let me know! 
+Need other features? Let me know! I would really love some feedback to improve my plugin.
 
 ## Release Notes
 
@@ -19,10 +19,10 @@ Need other features? Let me know!
 Disable Touchbar when no active Markdown-file.
 
 ### 1.0.2
-Small fixes after first publish.m
+Small fixes after first publishing.
 
 ### 1.0.0
-Initial Release, allowing to format markdown documents from the touchbar of the MacBook Pro.
+Initial release, allowing to format markdown documents from the touchbar of the MacBook Pro.
 
 ## License 
 Thanks to [Icons8](https://icons8.com) for the markdown icon in the logo.
