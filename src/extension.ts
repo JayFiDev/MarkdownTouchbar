@@ -38,6 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
         items.push({ label: 'Strikethrough', description: 'Strikethrough selected text' });
         items.push({ label: 'Link', description: 'Create new link' });
         items.push({ label: 'Image', description: 'Insert new image' });
+        items.push({ label: 'Table', description: 'Create new table' });
 
         var option = await vscode.window.showQuickPick(items);
 
@@ -56,6 +57,9 @@ export function activate(context: vscode.ExtensionContext) {
                 case "Strikethrough":
                     formatText("~~");
                     break;
+
+                case 'Table':
+                    createMarkdownTable();
                 default:
                     break;
             }

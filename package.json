@@ -13,7 +13,7 @@
         "touchbar",
         "Macbook",
         "Markdown"
-      ],
+    ],
     "categories": [
         "Other",
         "Programming Languages"
@@ -51,9 +51,8 @@
             },
             {
                 "command": "extension.showMore",
-                "title": "More" 
+                "title": "More"
             }
-
         ],
         "menus": {
             "touchBar": [
@@ -73,11 +72,6 @@
                     "group": "editing"
                 },
                 {
-                    "command": "extension.createTable",
-                    "when": "editorLangId == markdown",
-                    "group": "editing"
-                },
-                {
                     "command": "extension.formatDoc",
                     "when": "editorLangId == markdown",
                     "group": "editing"
@@ -90,7 +84,6 @@
             ]
         }
     },
-
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
